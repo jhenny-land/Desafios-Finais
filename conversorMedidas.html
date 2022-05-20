@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números com JS</title>
+    <style>
+        body { font: 12pt Arial; }
+        button { font-size: 12pt; padding: 30px; }
+    </style>
+</head>
+<body>
+    <h1>Conversor de Medidas</h1>
+    <button onclick="calcular()">Converter</button>
+    <section id="resultado">
+        <p>Clique no botão acima para iniciar</p>
+    </section>
+
+    <script>
+        function calcular() {
+            let num = Number(window.prompt('Digite um número: '))
+            
+            let res = window.document.querySelector('section#resultado')
+            res.innerHTML = `<p>A distância de <strong>${num}</strong> metros, corresponde a ... </p><hr>`
+            res.innerHTML += `<p> ${(num / 1000).toFixed(3)} quilômetros (Km)</p>`
+            res.innerHTML += `<p> ${(num / 100).toFixed(3)} hectômetros (Hm)</p>`
+            res.innerHTML += `<p> ${(num / 10).toFixed(3)} decâmetros (Dam)</p>`
+            res.innerHTML += `<p> ${(num * 10).toFixed(1)} decímetros (dm)</p>` 
+            res.innerHTML += `<p> ${(num * 10.000).toFixed(3)} centímetros (cm)</p>`        
+            res.innerHTML += `<p> ${(num * 100.000).toFixed(3)} milímetros (mm)</p>`
+        }
+    </script>
+</body>
+</html>
